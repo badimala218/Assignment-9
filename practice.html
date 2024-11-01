@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Practice with jQuery Events</title>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="jQuery/jquery-3.7.1.js"></script>
+  <script>
+    "use strict";
+	$(document).ready( () =>
+  	{
+        // Problem 1
+	    $("button:first-of-type").click( () =>
+        {
+           alert("The 1st button has been clicked"); 
+        });
+        // Problem 2
+        $("button:nth-child(2)").bind("click", () =>
+        {
+            alert("The 2nd button has been clicked");
+        });
+        // Problem 3
+        $("button:nth-child(3)").on("click", () =>
+        {
+            alert("The 3rd button has been clicked");
+        });
+        // Problem 4
+        $("button:nth-child(4), button:nth-child(5)").on("click", () =>
+        {
+            alert("A button has been clicked");
+        });
+        // Problem 5
+        $("div:first-of-type").css("width", "400px");
+        $("div:first-of-type").css("height", "400px");
+        $("div:first-of-type").on("click mouseenter mouseleave", (event) =>
+        {
+            alert("The div raised " + event.type + " event type.");
+        });
+        // Problem 6
+        $("div:nth-of-type(2)").on("click mouseenter mouseleave", (event) =>
+        {
+            $("div span").text("The div raised " + event.type + " event type.");
+        });
+        // Problem 7
+        $("a").click( (evt) =>
+        {
+            evt.preventDefault();
+            $(evt.currentTarget).css("color", "red");
+            alert(evt.currentTarget.nodeName);
+        });
+        // Problem 8
+        $(window).resize( (evt) =>
+        {
+            let width = $(window).prop("outerWidth");
+            let height = $(window).prop("outerHeight");
+            $("div:nth-of-type(3)").text("Div 3 Width: " + width + " Height: " + height);
+        });
+        // Problem 9
+        $("input:first").focus( (evt) =>
+        {
+            $(evt.currentTarget).css("background-color", "lightgray");
+        });
+        $("input:first").blur( (evt) =>
+        {
+            $(evt.currentTarget).css("background-color", "white");
+        });
+        // Problem 10
+        $("input[type='submit']").click( (evt) =>
+        {
+            evt.preventDefault();
+            console.log($("form input[type!='submit']:first").val());
+            let missing = false;
+            if ($("form input[type!='submit']:first").val() === "")
+            {
+                missing = true;
+                $("form input[type!='submit']:first").css("border-color", "red");
+            }
+            if ($("form input[type!='submit']:last").val() === "")
+            {
+                missing = true;
+                $("form input[type!='submit']:last").css("border-color", "red");
+            }
+            
+            if (missing === true)
+            {
+                alert("The fields are required.");
+            }
+            else
+            {        
+                $("form input").css("border-color", "green");
+            }
+        });
+    });
+  </script>
+</head>
+
+<body>
+	<main>
+		<button>Alert</button>
+        <button>Bind</button>
+        <button>On</button>
+        <button>Pair A</button>
+        <button>Pair B</button>
+        <div>
+            Div 1
+        </div>
+        <div>
+            Div 2
+            <span></span>
+        </div>
+        <p><a href="modulemedia.com">Link</a></p>
+        <div>
+            Div 3
+        </div><br>
+        <input type="text" placeholder="Text Field"/><br>
+        <p>
+        <form>
+            Form<br>
+            <label for="name">Name</label><br>
+            <input type="text" id="name"/><br>
+            <label for="email">Email</label><br>
+            <input type="text" id="email"/><br>
+            <input type="submit">
+        </form>
+        </p>
+	</main>
+</body>
+</html>
