@@ -6,16 +6,16 @@ Practice with jQuery
 #### Practice with jQuery Events Notes
 In practice.html:
 - HTML elements are labeled with text, such as Alert, Pair A, Link, and Text Field.
--- Problem 1 is associated with Alert button.
--- Problem 2 is associated with Bind button.
--- Problem 3 is associated with On button.
--- Problem 4 is associated with Pair A and Pair B buttons.
--- Problem 5 is associated with Div 1.
--- Problem 6 is associated with Div 2.
--- Problem 7 is associated with Link.
--- Problem 8 is associated with Div 3.
--- Problem 9 is associated with text input with placeholder "Text Field."
--- Problem 10 has the text "Form" and labels for the text input.  
+    - Problem 1 is associated with Alert button.
+    - Problem 2 is associated with Bind button.
+    - Problem 3 is associated with On button.
+    - Problem 4 is associated with Pair A and Pair B buttons.
+    - Problem 5 is associated with Div 1.
+    - Problem 6 is associated with Div 2.
+    - Problem 7 is associated with Link.
+    - Problem 8 is associated with Div 3.
+    - Problem 9 is associated with text input with placeholder "Text Field."
+    - Problem 10 has the text "Form" and labels for the text input.  
 
 #### Special Notes
 - The form text input elements have ids because there was a warning.  
